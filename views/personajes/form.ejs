@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Personajes</title>
+	
+</head>
+<body>
+
+	<a href="/personajes">volver</a>
+	<br>
+	<h3><%= titulo%> </h3>
+
+	<form action="<%= action%>" method="<%= method%>">
+		<input type="text" name="nombre" placeholder="Nombre">
+		<input type="text" name="apellido" placeholder="Apellido">
+		<input type="text" name="biografia" placeholder="Biografía">
+		<input type="submit" value="<%= accion%>">
+	</form>
+	<%if(typeof(res) != "undefined"){%>
+		
+		<script type="text/javascript">
+			//console.log("Form de los personajes")		
+			//console.log(typeof("<%- res.id %>"))
+			var nombre = document.getElementsByName("nombre");
+			var apellido = document.getElementsByName("apellido");
+			var biografia = document.getElementsByName("biografia");
+			console.log(nombre)
+
+			nombre[0].value = "<%- res.nombre %>";
+			apellido[0].value = "<%- res.apellido %>";
+			biografia[0].value = "<%- res.biografia %>";
+
+		</script>		
+	<%}%>
+</body>
+</html>

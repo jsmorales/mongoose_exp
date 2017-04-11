@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index de Personajes</title>
+</head>
+<body>
+	<h2>Ver los personajes</h2>
+	<a href="/personajes/nuevo">Crear Personaje</a>
+	<hr>
+	<div id="resultados">
+		<%res.forEach(function(p, id){%>
+			<strong>Nombre: </strong> <%= p.nombre %>
+			<strong>Apellido: </strong> <%= p.apellido %>
+			<strong>Biografía: </strong> <%= p.biografia %>
+			<a href="/personajes/ver/<%= p.id %>">Ver</a>
+			<a href="/personajes/editar/<%= p.id %>">Editar</a>
+			<a href="/personajes/eliminar/<%= p.id %>">Eliminar</a>
+			<hr>				
+		<%}) %>
+	</div>
+
+</body>
+</html>
